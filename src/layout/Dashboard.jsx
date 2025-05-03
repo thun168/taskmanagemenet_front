@@ -1,0 +1,31 @@
+import React from 'react';
+import Sidebar from '../components/Sidebar';
+import Navbar from '../components/Navbar';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import TaskManagement from '../pages/TaskManagement';
+
+const Dashboard = () => {
+  return (
+    <BrowserRouter>
+    <div className="min-h-screen">
+      <div className="top-0 left-0 w-full">
+        <Navbar />
+      </div>
+      <div className="flex pt-9">
+        {/* Sidebar */}
+        <div className="w-64 fixed top-16 left-0 h-full z-10">
+          <Sidebar />
+        </div>
+        {/* Main Content */}
+        <div className="ml-64 p-4 flex-1">
+          <Routes>
+            <Route path="taskmanage" element={<TaskManagement />} />
+          </Routes>
+        </div>
+      </div>
+    </div>
+    </BrowserRouter>
+  );
+};
+
+export default Dashboard;
