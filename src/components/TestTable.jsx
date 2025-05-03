@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Data = [
+export const Data = [
   { id: 1, title: "Design UX/UI", name: "Sok Chandara", timeS: "2025-1-10", timeE: "2025-2-10", status: "completed" },
   { id: 2, title: "Frontend Dev", name: "Sok Dara", timeS: "2025-2-01", timeE: "2025-3-01", status: "In Progress" },
   { id: 3, title: "Design UX/UI", name: "Sok Chandara", timeS: "2025-1-10", timeE: "2025-2-10", status: "completed" },

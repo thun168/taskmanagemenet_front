@@ -3,6 +3,7 @@ import Sidebar from '../components/Sidebar';
 import Navbar from '../components/Navbar';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import TaskManagement from '../pages/TaskManagement';
+import UserSection from '../pages/UserSection';
 
 const Dashboard = () => {
   return (
@@ -20,6 +21,7 @@ const Dashboard = () => {
         <div className="ml-64 p-4 flex-1">
           <Routes>
             <Route path="taskmanage" element={<TaskManagement />} />
+            <Route path="usersection" element={<UserSection />} />
           </Routes>
         </div>
       </div>
