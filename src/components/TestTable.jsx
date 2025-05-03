@@ -28,7 +28,7 @@ const Data = [
 const TestTable = () => {
   return (
     <div className="p-4">
-      <div className="overflow-x-auto shadow">
+      <div className="overflow-x-autos shadow">
         <table className="w-full text-sm text-left text-gray-700">
           <thead className="text-xs uppercase bg-gray-100 text-blue-500 border-b">
             <tr>
@@ -37,7 +37,7 @@ const TestTable = () => {
               <th className="px-6 py-3">Assigned to</th>
               <th className="px-6 py-3">Start-Time</th>
               <th className="px-6 py-3">End-Time</th>
-              <th className="px-6 py-3">Status</th>
+              <th className="px-6 py-3 text-center">Status</th>
               <th className="px-6 py-3">Action</th>
             </tr>
           </thead>
@@ -49,7 +49,17 @@ const TestTable = () => {
                 <td className="px-6 py-4 text-yellow-600 whitespace-nowrap">{data.name}</td>
                 <td className="px-6 py-4">{data.timeS}</td>
                 <td className="px-6 py-4">{data.timeE}</td>
-                <td className="px-6 py-4">{data.status}</td>
+                <td className="px-6 py-4 text-center">
+                <div>
+                    <span
+                    className={`inline-block w-[90px] text-center p-2 text-white rounded-sm ${
+                        data.status.toLowerCase() === "end" ? 'bg-red-500' : 'bg-green-500'
+                    }`}
+                    >
+                    {data.status}
+                    </span>
+                </div>
+                </td>
                 <td className="px-6 py-4 flex space-x-3">
                   <a href="#" className="text-blue-600 hover:underline">Edit</a>
                   <a href="#" className="text-red-600 hover:underline">Remove</a>
