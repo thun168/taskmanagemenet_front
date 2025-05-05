@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Button from './Button'
 
-const AssignTask = () => {
+const AssignTask = ({onClose}) => {
   const [show, setShow] = useState(false)
 
   useEffect(() => {

@@ -1,13 +1,17 @@
 
 import './App.css'
+import { StateContext } from './context/StateContext'
 import Dashboard from './layout/Dashboard'
 
 function App() {
 
   return (
     <>
-    <h1>hi</h1>
-     <Dashboard/>
+    <StateContext>
+    <div className='pt-5'>
+      <Dashboard/>
+    </div>
+    </StateContext>
     </>
   )
 }
