@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Button from './Button'
 
-const AddEmpolyee = () => {
+const AssignTask = () => {
   const [show, setShow] = useState(false)
 
   useEffect(() => {
@@ -16,31 +16,31 @@ const AddEmpolyee = () => {
           <form>
             <div className='flex gap-10 justify-center pt-5'>
               <div className='flex flex-col'>
-                <label htmlFor='task_title' className='pb-2'>Task Title</label>
-                <input type="text" className='w-[250px] h-[40px] border-2 border-gray-300 rounded-xs p-2' />
+                <label htmlFor='task_title' className='pb-2 font-semibold'>Task Title</label>
+                <input type="text" className='w-[250px] h-[40px] border-2 border-gray-300 rounded-[5px] p-2' placeholder='Add task title' />
               </div>
               <div className='flex flex-col'>
-                <label htmlFor='task_desc' className='pb-2'>Task Description</label>
-                <textarea className='w-[250px] h-[80px] border-2 border-gray-300 p-2' />
-              </div>
-            </div>
-            <div className='flex gap-10 justify-center pt-3'>
-              <div className='flex flex-col'>
-                <label htmlFor='start_date' className='pb-2'>Start Date</label>
-                <input type="date" className='w-[250px] h-[40px] border-2 border-gray-300 rounded-xs p-2' />
-              </div>
-              <div className='flex flex-col'>
-                <label htmlFor='end_date' className='pb-2'>End Date</label>
-                <input type="date" className='w-[250px] h-[40px] border-2 border-gray-300 rounded-xs p-2' />
+                <label htmlFor='task_desc' className='pb-2 font-semibold'>Task Description</label>
+                <textarea className='w-[250px] h-[80px] border-2 rounded-[5px] border-gray-300 p-2' />
               </div>
             </div>
             <div className='flex gap-10 justify-center pt-3'>
               <div className='flex flex-col'>
-                <label htmlFor='employee' className='pb-2'>Select Employee</label>
+                <label htmlFor='start_date' className='pb-2 font-semibold'>Start Date</label>
+                <input type="date" className='w-[250px] h-[40px] border-2 border-gray-300 rounded-[5px] p-2' />
+              </div>
+              <div className='flex flex-col'>
+                <label htmlFor='end_date' className='pb-2 font-semibold'>End Date</label>
+                <input type="date" className='w-[250px] h-[40px] border-2 border-gray-300 rounded-[5px] p-2' />
+              </div>
+            </div>
+            <div className='flex gap-10 justify-center pt-3'>
+              <div className='flex flex-col'>
+                <label htmlFor='employee' className='pb-2 font-semibold'>Select Employee</label>
                 <select
                   id="role"
                   name="role"
-                  className="mt-1 block w-[250px] px-4 py-2 border rounded-xs shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
+                  className="mt-1 block w-[250px] px-4 py-2 border rounded-[5px] shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
                   required>
                   <option>Select an Employee</option>
                   <option>Lim Vithyea</option>
@@ -50,7 +50,7 @@ const AddEmpolyee = () => {
               </div>
               <div className='flex flex-col w-[250px] h-[40px]'></div>
             </div>
-            <div className='flex justify-end pt-10'>
+            <div className='flex justify-center pt-10'>
               <Button name={"Cancel"} color={"bg-red-500"} />
               <Button name={"Save"} color={"bg-blue-500"} />
             </div>
@@ -61,4 +61,4 @@ const AddEmpolyee = () => {
   )
 }
 
-export default AddEmpolyee
+export default AssignTask
