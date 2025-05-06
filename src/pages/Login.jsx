@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import LoginPic from "../assets/login.jpg";
 import NUM from "../assets/NUM.png"
 import { useNavigate } from 'react-router-dom';
+import ParticlesComponent from '../components/Particle';
+import "../components/particle.css";
 
 const Login = ({onLogin}) => {
 
@@ -34,15 +36,17 @@ const Login = ({onLogin}) => {
 
 
   return (
-    <div className='bg-green-300'>
+    <div className=''>
+        <ParticlesComponent id="particles"/>
         <div className='min-h-screen flex items-center justify-center'>
-            <div className='w-[900px] h-[500px] bg-white pl-[30px] rounded-2xl shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)] flex' >
+            <div className='w-[900px] z-10 h-[500px] bg-white pl-[30px] rounded-2xl shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)] flex' >
                 <div className='w-[400px] h-[450px] bg-white m-auto rounded-2xl shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)]'>
-                    <div className='mt-[50px]'>
+                    <div className='mt-[40px]'>
                         <div className='flex justify-center'>
                         <img src={NUM} className='w-[50px] h-[50px]'/>
                         </div>
-                        <h1 className='text-center font-bold text-2xl'>Login</h1>
+                        <h1 className='text-center font-bold text-[20px] mb-2'>Task Management System</h1>
+                        <h1 className='text-center font-semibold text-xl'>Login</h1>
                     </div>
                     <form className='flex justify-center' onSubmit={handleLogin}>
                         <div className='flex justify-center flex-col'>
@@ -65,6 +69,7 @@ const Login = ({onLogin}) => {
                 </div>
             </div>
         </div>
+        
     </div>
   )
 }

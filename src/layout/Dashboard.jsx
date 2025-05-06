@@ -36,6 +36,7 @@ import Navbar from '../components/Navbar';
 import { Routes, Route } from 'react-router-dom';
 import TaskManagement from '../pages/TaskManagement';
 import UserSection from '../pages/UserSection';
+import ParticlesComponent from '../components/Particle';
 
 const Dashboard = () => {
   return (
@@ -49,7 +50,7 @@ const Dashboard = () => {
           <Sidebar />
         </div>
         {/* Main Content */}
-        <div className="ml-64 p-4 flex-1">
+        <div className="ml-64 p-4 flex-1 z-10">
           <Routes>
             <Route path="taskmanage" element={<TaskManagement />} />
             <Route path="usersection" element={<UserSection />} />
