@@ -15,7 +15,7 @@ function App() {
   return (
     <StateContext>
       <BrowserRouter>
-      <div className='pt-5'>
+      
         <Routes>
           {isLoggedIn && (
           <>
@@ -25,8 +25,8 @@ function App() {
           </>
           )
           }
+          <Route path="*" element={<Navigate to={"/login"}  />}/>
         </Routes>
-        </div>
       </BrowserRouter>
     </StateContext>
   );

@@ -9,7 +9,7 @@ const UserSection = () => {
     const { openAdd,isOpen } = useStateProps();
   return (
     <>
-    <div className='flex justify-center'>
+    <div className='flex justify-center pt-5'>
       <div className='flex justify-center absolute'>
       {isOpen && <AddEmployee/>}
       </div>

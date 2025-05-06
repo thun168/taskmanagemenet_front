@@ -13,7 +13,7 @@ const TaskManagement = () => {
 
   return (
     <>
-      <div className='flex justify-center'>
+      <div className='flex justify-center pt-5'>
         <div className='flex justify-center absolute'>
           {isAssignTask && <AssignTask/>}
         </div>
