@@ -19,7 +19,6 @@ const Login = ({onLogin}) => {
           [name]: value,
         }));
       };
-
     const navigate = useNavigate();
     const handleLogin = (e) => {
         e.preventDefault();
@@ -34,7 +33,6 @@ const Login = ({onLogin}) => {
         }
       };
 
-
   return (
     <div className=''>
         <ParticlesComponent id="particles"/>
@@ -46,7 +44,7 @@ const Login = ({onLogin}) => {
                         <img src={NUM} className='w-[50px] h-[50px]'/>
                         </div>
                         <h1 className='text-center font-bold text-[20px] mb-2'>Task Management System</h1>
-                        <h1 className='text-center font-semibold text-xl'>Login</h1>
+                        <h1 className='text-center font-semibold text-xl text-blue-500'>Login</h1>
                     </div>
                     <form className='flex justify-center' onSubmit={handleLogin}>
                         <div className='flex justify-center flex-col'>
