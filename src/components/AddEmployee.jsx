@@ -42,9 +42,6 @@ const AddEmployee = () => {
       <div className='w-[700px] h-auto bg-white z-50 rounded-xl shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)]'>
         <div className='p-[10px]'>
         <div>
-            <button onClick={isCloseAdd} className={`w-[120px] ml-2 cursor-pointer h-[40px] bg-red-500 rounded-[7px] shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:bg-blue-900 transition-all duration-100`}>
-              <span className='font-bold text-white'>Cancel</span>
-            </button>
           <h1 className='text-center font-bold text-xl text-blue-600'>Add Employee</h1>
           </div>
           <form onSubmit={handleSubmit}>
@@ -97,6 +94,9 @@ const AddEmployee = () => {
               </div>
             </div>
             <div className='flex justify-center py-5 gap-4'>
+            <button onClick={isCloseAdd} className={`w-[120px] ml-2 cursor-pointer h-[40px] bg-red-500 rounded-[7px] shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:bg-blue-900 transition-all duration-100`}>
+              <span className='font-bold text-white'>Cancel</span>
+            </button>
               <Button name={"Save"} color={"bg-blue-500"} type="submit" />
             </div>
           </form>

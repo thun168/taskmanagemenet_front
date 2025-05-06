@@ -9,7 +9,7 @@ const AssignTask = () => {
     return () => clearTimeout(timer)
   }, [])
   return (
-    <div className={`transition-all duration-500 ease-out ${show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'} flex justify-center items-center fixed inset-0 bg-black/30 backdrop-blur-sm`}>
+    <div className={`transition-all duration-500 ease-out ${show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'} flex justify-center items-center fixed inset-0 bg-black/20 backdrop-blur-sm`}>
       <div className='w-[800px] h-[500px] bg-white z-50 rounded-xl shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)]'>
         <div className='p-[50px]'>
           <h1 className='text-center font-bold text-xl text-blue-600'>Assign Task for Employee</h1>
