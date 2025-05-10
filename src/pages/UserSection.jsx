@@ -4,9 +4,12 @@ import AdduserBtn from '../components/AdduserBtn'
 import AddEmployee from '../components/AddEmployee'
 import AssignButton from '../components/AssignButton'
 import { useStateProps } from '../context/StateContext'
+import AdminTable from '../components/AdminTable'
 
 const UserSection = () => {
     const { openAdd,isOpen } = useStateProps();
+    const [view,setView] = useState("admin")
+
   return (
     <>
     <div className='flex justify-center pt-5'>
@@ -19,15 +22,32 @@ const UserSection = () => {
             <AssignButton setisAddStuff={openAdd} name={"Add Employee"}/>
         </div>
         <div>
-            <h1 className='text-center font-semibold text-3xl pt-5 pr-3 pl-5 pb-3'>Employees</h1>
+            {view === 'admin' ? 
+            <h1 className='text-center font-semibold text-3xl pt-5 pr-3 pl-5 pb-3 text-red-500'>Admin</h1>:
+            <h1 className='text-center font-semibold text-3xl pt-5 pr-3 pl-5 pb-3 text-blue-500'>Employees</h1>
+            }
             <div className='px-9'>
                 <div className='w-full flex justify-between'>
-                    <button className='w-1/2 text-white font-bold bg-blue-900 py-2'>Manage Admin</button>
-                    <button className='w-1/2 text-white font-bold bg-blue-900'>Manage User</button>
+                   <button onClick={() => setView('admin')}
+                        className={`w-1/2 py-2 font-bold text-white transition-colors duration-200 hover:cursor-pointer ${
+                            view === 'admin' 
+                            ? 'bg-blue-900 border-b-3 border-green-400' 
+                            : 'bg-blue-700 hover:bg-blue-800'}`}>
+                        Manage Admin
+                        </button>
+                    <button onClick={() => setView('user')}
+                    className={`w-1/2 py-2 font-bold text-white transition-colors duration-200 hover:cursor-pointer ${
+                        view === 'user' 
+                        ? 'bg-blue-900 border-b-3 border-green-400' 
+                        : 'bg-blue-700 hover:bg-blue-800'
+                    }`}>
+                    Manage User
+                    </button>
                 </div>
             </div>
             <div className='px-5'>
-                <UserTable/>
+                {view === 'admin' ? <AdminTable/> : <UserTable/>}
+                
             </div>
         </div>
     </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import LoginPic from "../assets/login.jpg";
 import NUM from "../assets/NUM.png"
 import { useNavigate } from 'react-router-dom';
@@ -11,7 +11,7 @@ const Login = ({onLogin}) => {
         name:"",
         password:""
     })
-
+    
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData((prevFormData) => ({
