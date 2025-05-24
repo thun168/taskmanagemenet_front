@@ -41,7 +41,7 @@ const UserSection = () => {
                         ? 'bg-blue-900 border-b-3 border-green-400' 
                         : 'bg-blue-700 hover:bg-blue-800'
                     }`}>
-                    Manage User
+                    Manage Employees
                     </button>
                 </div>
             </div>

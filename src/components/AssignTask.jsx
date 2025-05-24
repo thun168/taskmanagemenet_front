@@ -1,64 +1,81 @@
-import React, { useEffect, useState } from 'react'
-import Button from './Button'
+import React, { useEffect, useState } from 'react';
+import Button from './Button';
 
 const AssignTask = () => {
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShow(true), 10)
-    return () => clearTimeout(timer)
-  }, [])
+    const timer = setTimeout(() => setShow(true), 10);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className={`transition-all duration-500 ease-out ${show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'} flex justify-center items-center fixed inset-0 bg-black/20 backdrop-blur-sm`}>
-      <div className='w-[800px] h-[500px] bg-white z-50 rounded-xl shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)]'>
-        <div className='p-[50px]'>
-          <h1 className='text-center font-bold text-xl text-blue-600'>Assign Task for Employee</h1>
-          <form>
-            <div className='flex gap-10 justify-center pt-5'>
-              <div className='flex flex-col'>
-                <label htmlFor='task_title' className='pb-2 font-semibold'>Task Title</label>
-                <input type="text" className='w-[250px] h-[40px] border-2 border-gray-300 rounded-[5px] p-2' placeholder='Add task title' />
-              </div>
-              <div className='flex flex-col'>
-                <label htmlFor='task_desc' className='pb-2 font-semibold'>Task Description</label>
-                <textarea className='w-[250px] h-[80px] border-2 rounded-[5px] border-gray-300 p-2' />
-              </div>
+    <div className={`transition-all duration-500 ease-out ${show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'} flex justify-center items-center fixed inset-0 bg-black/30 backdrop-blur-sm z-50`}>
+      <div className='w-[800px] h-auto bg-white rounded-2xl shadow-2xl px-10 py-8'>
+        <h1 className='text-center font-bold text-2xl text-blue-600 mb-6'>Assign Task for Employee</h1>
+
+        <form>
+          <div className='flex gap-10 justify-center pt-2'>
+            <div className='flex flex-col w-[300px]'>
+              <label htmlFor='task_title' className='mb-2 text-sm font-medium text-gray-700'>Task Title</label>
+              <input 
+                type="text"
+                className='p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none'
+                placeholder='Add task title'
+              required/>
             </div>
-            <div className='flex gap-10 justify-center pt-3'>
-              <div className='flex flex-col'>
-                <label htmlFor='start_date' className='pb-2 font-semibold'>Start Date</label>
-                <input type="date" className='w-[250px] h-[40px] border-2 border-gray-300 rounded-[5px] p-2' />
-              </div>
-              <div className='flex flex-col'>
-                <label htmlFor='end_date' className='pb-2 font-semibold'>End Date</label>
-                <input type="date" className='w-[250px] h-[40px] border-2 border-gray-300 rounded-[5px] p-2' />
-              </div>
+            <div className='flex flex-col w-[300px]'>
+              <label htmlFor='task_desc' className='mb-2 text-sm font-medium text-gray-700'>Task Description</label>
+              <textarea 
+                className='p-3 border border-gray-300 rounded-lg h-[100px] resize-none focus:ring-2 focus:ring-blue-500 outline-none'
+                placeholder='Enter task details...'
+              />
             </div>
-            <div className='flex gap-10 justify-center pt-3'>
-              <div className='flex flex-col'>
-                <label htmlFor='employee' className='pb-2 font-semibold'>Select Employee</label>
-                <select
-                  id="role"
-                  name="role"
-                  className="mt-1 block w-[250px] px-4 py-2 border rounded-[5px] shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
-                  required>
-                  <option>Select an Employee</option>
-                  <option>Lim Vithyea</option>
-                  <option>Doem Samaun</option>
-                  <option>Thoun Sithun</option>
-                </select>
-              </div>
-              <div className='flex flex-col w-[250px] h-[40px]'></div>
+          </div>
+
+          <div className='flex gap-10 justify-center pt-6'>
+            <div className='flex flex-col w-[300px]'>
+              <label htmlFor='start_date' className='mb-2 text-sm font-medium text-gray-700'>Start Date</label>
+              <input 
+                type="date"
+                className='p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none'
+              required/>
             </div>
-            <div className='flex justify-center pt-10'>
-              <Button name={"Cancel"} color={"bg-red-500"} />
-              <Button name={"Save"} color={"bg-blue-500"} />
+            <div className='flex flex-col w-[300px]'>
+              <label htmlFor='end_date' className='mb-2 text-sm font-medium text-gray-700'>End Date</label>
+              <input 
+                type="date"
+                className='p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none'
+              required/>
             </div>
-          </form>
-        </div>
+          </div>
+
+          <div className='flex gap-10 justify-center pt-6'>
+            <div className='flex flex-col w-[300px]'>
+              <label htmlFor='employee' className='mb-2 text-sm font-medium text-gray-700'>Select Employee</label>
+              <select
+                id="role"
+                name="role"
+                className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                required
+              >
+                <option>Select an Employee</option>
+                <option>Lim Vithyea</option>
+                <option>Doem Samaun</option>
+                <option>Thoun Sithun</option>
+              </select>
+            </div>
+            <div className='w-[300px]'>{/* empty to align layout */}</div>
+          </div>
+
+          <div className='flex justify-center gap-6 pt-10'>
+            <Button name={"Cancel"} color={"bg-red-500 hover:bg-red-600"} />
+            <Button name={"Save"} color={"bg-blue-500 hover:bg-blue-600"} />
+          </div>
+        </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default AssignTask
+export default AssignTask;
