@@ -52,7 +52,7 @@ const TestTable = () => {
                 <td className="px-6 py-4 text-center">
                 <div>
                     <span
-                    className={`inline-block w-[90px] font-semibold text-center p-2 text-white rounded-sm 
+                    className={`inline-block w-[100px] font-semibold text-center p-2 text-white rounded-sm 
                         ${data.status.toLowerCase() === "completed" ? 'bg-green-500' : 'bg-yellow-500'}`}>
                     {data.status}
                     </span>
